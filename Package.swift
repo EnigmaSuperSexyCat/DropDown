@@ -23,7 +23,13 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "DropDown",
-            dependencies: []),
+            dependencies: [],
+            path: "DropDown",
+            exclude: ["Info.plist", "DropDown.h"],
+            resources: [
+              .process("DropDown/resources")
+            ]
+        ),
         .testTarget(
             name: "DropDownTests",
             dependencies: ["DropDown"]),
